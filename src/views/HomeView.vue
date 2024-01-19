@@ -1,18 +1,29 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app id="inspire">
+    <v-navigation-drawer v-model="drawer">
+      <!--  -->
+    </v-navigation-drawer>
+
+    <v-app-bar>
+      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+
+      <v-app-bar-title>Application</v-app-bar-title>
+    </v-app-bar>
+
+    <v-main>
+      <!--  -->
+    </v-main>
+  </v-app>
 </template>
 
-<script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+<script setup>
+import { ref } from "vue";
 
+const drawer = ref(null);
+</script>
+
+<script>
 export default {
-  name: 'HomeView',
-  components: {
-    HelloWorld
-  }
-}
+  data: () => ({ drawer: null }),
+};
 </script>
